@@ -10,10 +10,11 @@ import subprocess
 import shutil
 
 # Configuration variables
-minecraft_args = ["java", "-Xmx1024M", "-Xms512M", "-cp", "/home/josh/Desktop/Minecraft.jar", "net.minecraft.LauncherFrame"]
+minecraft_path = os.environ["HOME"] + "/.minecraft/"
+minecraft_jar  = minecraft_path + "Minecraft.jar"
+minecraft_args = ["java", "-Xmx1024M", "-Xms512M", "-cp", minecraft_jar, "net.minecraft.LauncherFrame"]
 frequency      = 60
 total_backups  = 10 
-minecraft_path = os.environ["HOME"] + "/.minecraft/"
 save_path      = minecraft_path + "saves/"
 backup_path    = minecraft_path + "backups/"
 
